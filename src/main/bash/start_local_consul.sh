@@ -5,7 +5,7 @@ consul -version
 if [ "$1" == "memory" ]; then
     consul agent -dev -server -log-level=info &
 elif [ "$1" == "dev" ]; then
-    consul agent -dev -log-level=info &
+    consul agent -dev -config-dir "../resources" -log-level=info &
 else
     echo "Usage: $0 [memory|dev]"
     exit 1

@@ -18,3 +18,19 @@ data_dir = "/var/lib/consul"
 
 # Disable remote access to the Consul API
 disable_remote_exec = true
+
+# Parameter to enable UI
+ui_config{
+    enabled = true
+}
+# Ports used by Consul server
+ports{
+    dns = 8600
+    http = 8500 
+    https = -1
+    grpc = 8502 # -1 per default on server mode, 8502 per default on dev mode
+    #grpc_tls = 8503 
+    serf_lan = 8301
+    serf_wan = 8302
+    server = 8300
+}
